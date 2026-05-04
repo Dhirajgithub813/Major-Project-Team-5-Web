@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coriz-O-Mart | Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        
+        if (token) {
+            // User is logged in - go to home page
+            window.location.href = 'home.html';
+        } else {
+            // User not logged in - go to login page
+            window.location.href = 'login.html';
+        }
+    </script>
+    
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #f5f5f5;">
+        <div style="text-align: center;">
+            <h1>Loading Coriz-O-Mart...</h1>
+            <p>If this page doesn't redirect, click <a href="login.html">here</a></p>
+        </div>
+    </div>
+</body>
+</html>

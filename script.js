@@ -1,69 +1,99 @@
-// login page
-// Wait for the page to load
+// LOGIN PAGE HANDLING
 window.addEventListener('load', () => {
     const splash = document.getElementById('splash-screen');
     const loginContent = document.getElementById('login-wrapper');
 
-    // Show logo animation for 2 seconds
-    setTimeout(() => {
-        splash.style.opacity = '0'; // Fade out effect
-        
+    if (splash && loginContent) {
+        // Show logo animation for 2 seconds
         setTimeout(() => {
-            splash.classList.add('hidden');
-            loginContent.classList.remove('hidden'); // Show Login Form
-            document.body.style.overflow = 'auto'; 
-        }, 600);
+            splash.style.opacity = '0'; // Fade out effect
+            
+            setTimeout(() => {
+                splash.classList.add('hidden');
+                loginContent.classList.remove('hidden'); // Show Login Form
+                document.body.style.overflow = 'auto'; 
+            }, 600);
+            
+        }, 2000);
+    }
+
+    // Attach login form handler if on login page
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', handleLogin);
+    }
+});
+
+// LOGIN FUNCTION - Connect to Backend
+async function handleLogin(event) {
+    event.preventDefault();
+    
+    const userInput = document.getElementById('user-input')?.value;
+    const password = document.getElementById('password-input')?.value;
+
+    if (!userInput || !password) {
+        alert('Please enter email and password');
+        return;
+    }
+
+    try {
+        const response = await authAPI.login(userInput, password);
         
-    }, 2000);
-});
-
-// product js
-document.addEventListener('DOMContentLoaded', () => {
-    const productGrid = document.getElementById('product-display');
-    let allProducts = []; // Search-ku helpful-aa irukkum
-
-    async function fetchUnlimited() {
-        if (!productGrid) return;
-
-        try {
-            
-            const response = await fetch('https://dummyjson.com/products?limit=0');
-            const data = await response.json();
-            allProducts = data.products;
-            
-            displayItems(allProducts);
-            console.log("Total Products Loaded: " + allProducts.length);
-
-        } catch (error) {
-            console.error("Fetch Error:", error);
+        if (response.token) {
+            setAuthToken(response.token);
+            alert('Login successful!');
+            window.location.href = 'home.html';
         }
+    } catch (error) {
+        alert('Login failed: ' + error.message);
+    }
+}
+
+// CART MANAGEMENT
+async function addToCart(productName, productId = null) {
+    const token = getAuthToken();
+    
+    if (!token) {
+        alert('Please login first to add items to cart');
+        window.location.href = 'login.html';
+        return;
     }
 
-    function displayItems(products) {
-        productGrid.innerHTML = ''; 
-        products.forEach(item => {
-            const inrPrice = Math.round(item.price * 80);
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            card.innerHTML = `
-                <div class="wishlist-icon"><i class="fa-regular fa-heart"></i></div>
-                <div class="product-img-wrapper">
-                    <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
-                </div>
-                <div class="product-info">
-                    <h4 class="product-title">${item.title}</h4>
-                    <div class="product-price-row">
-                        <span class="price">₹${inrPrice}</span>
-                        <button class="add-btn" onclick="addToCart('${item.title.replace(/'/g, "\\'")}')">Add +</button>
-                    </div>
-                </div>
-            `;
-            productGrid.appendChild(card);
-        });
+    try {
+        // If productId is available, use backend API
+        if (productId) {
+            await cartAPI.addToCart(productId, 1);
+            alert('Product added to cart!');
+        } else {
+            // Fallback: Store in localStorage for now
+            let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const existingItem = cart.find(item => item.name === productName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name: productName, quantity: 1 });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to cart!');
+        }
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+        alert('Failed to add to cart');
     }
+}
 
-    fetchUnlimited();
-});
+// Get cart from backend
+async function getCartItems() {
+    try {
+        const cart = await cartAPI.getCart();
+        return cart;
+    } catch (error) {
+        console.error('Error fetching cart:', error);
+        return [];
+    }
+}
 // Search & Category Logic (JS)
 let allProducts = []; // Global variable to store all fetched items
 
