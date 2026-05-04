@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Categories | Coriz-O-Mart</title>
+    <!-- External Font and Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="category-layout">
+
+    <!-- Sticky Header -->
+    <header class="header">
+        <div class="navbar-top">
+            <a href="home.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+            <h2 class="section-title" style="margin: 0; padding-left: 15px;">All Categories</h2>
+        </div>
+    </header>
+
+    <main class="main-cat-wrapper">
+        <!-- LEFT SIDEBAR: Main Categories -->
+        <!-- Backend Team: Loop through main category list here -->
+        <aside class="left-nav-sidebar">
+            <div class="nav-item active">Beauty</div>
+            <div class="nav-item">Fashion</div>
+            <div class="nav-item">Electronics</div>
+            <div class="nav-item">Home & Living</div>
+            <div class="nav-item">Footwear</div>
+            <div class="nav-item">Jewelry</div>
+            <div class="nav-item">Groceries</div>
+        </aside>
+
+        <!-- RIGHT CONTENT: Sub-Categories List -->
+        <!-- Backend Team: Update this section based on the selected sidebar item -->
+        <section class="right-sub-content">
+            <div class="sub-category-group">
+                <h4 class="group-label">Popular Collections</h4>
+                
+                <!-- Sub-category buttons -->
+                <div class="sub-item-link">
+                    <span>New Arrivals</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="sub-item-link">
+                    <span>Best Sellers</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <h4 class="group-label">Specific Categories</h4>
+
+                <div class="sub-item-link">
+                    <span>Face Makeup</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="sub-item-link">
+                    <span>Eye Care</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="sub-item-link">
+                    <span>Skin Treatments</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="sub-item-link">
+                    <span>Fragrances</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Script -->
+    <script src="script.js"></script>
+</body>
+</html>

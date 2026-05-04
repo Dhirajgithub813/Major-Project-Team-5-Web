@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coriz-O-Mart | Online Shopping</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="navbar-top">
+            <div class="logo">
+                <img src="images/logo.png" alt="Coriz-O-Mart">
+            </div>
+
+            <div class="search-section">
+                <div class="search-wrapper">
+                    <i class="fa fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Try Saree, Kurti or Search by Product Code">
+                </div>
+            </div>
+
+            <div class="nav-right-actions">
+                <!-- Fix 1: Categories Link -->
+                <a href="categories.html" class="nav-action-item">
+                    <i class="fa-solid fa-list"></i>
+                    <span>Categories</span>
+                </a>
+                
+                <!-- Fix 2: Profile Link (Changed div to <a>) -->
+                <a href="profile.html" class="nav-action-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </a>
+
+                <!-- Fix 3: Orders Link -->
+                <a href="myorders.html" class="nav-action-item">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>Orders</span>
+                </a>
+
+                <!-- Fix 4: Wishlist Link (Changed div to <a>) -->
+                <a href="wishlist.html" class="nav-action-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Wishlist</span>
+                </a>
+                
+
+                <!-- Fix 5: Cart Link (Changed div to <a>) -->
+                <a href="cart.html" class="nav-action-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge">0</span>
+                    <span>Cart</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="promo-banner"></div>
+        <h2 class="section-title">Products For You</h2>
+        <div id="product-display" class="product-grid">
+            Fetching latest products...
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <a href="home.html" class="footer-nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+
+            <a href="categories.html" class="footer-nav-item">
+                <i class="fa-solid fa-layer-group"></i>
+                <span>Categories</span>
+            </a>
+
+            <a href="cart.html" class="footer-nav-item">
+                <div class="footer-cart-wrapper">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="badge footer-badge">0</span>
+                </div>
+                <span>Cart</span>
+            </a>
+
+            <a href="wishlist.html" class="footer-nav-item">
+                <i class="fa-solid fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+
+            <a href="javascript:void(0)" class="footer-nav-item more-menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-circle-chevron-up"></i>
+                <span>More</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- More Options Sheet -->
+    <div id="more-sheet" class="more-menu-sheet">
+        <div class="sheet-content">
+            <div class="sheet-header">
+                <div class="drag-handle" onclick="toggleMenu()"></div>
+                <h3>More Options</h3>
+                <button onclick="toggleMenu()" class="close-sheet"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="sheet-body">
+                <a href="profile.html" class="sheet-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+                <a href="myorders.html" class="sheet-item">
+                    <i class="fa-solid fa-box-open"></i>
+                    <span>My Orders</span>
+                </a>
+                <a href="about.html" class="sheet-item">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>About Us</span>
+                </a>
+                <a href="help.html" class="sheet-item">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Customer Support</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

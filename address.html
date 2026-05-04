@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Addresses | Coriz-O-Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="address-page">
+
+    <header class="header">
+        <div class="navbar-top">
+            <a href="profile.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title-group">
+                <div class="purple-bar"></div>
+                <h2 class="section-title">My Addresses</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- Address Container -->
+        <div id="address-container">
+            <!-- Sample Address Card -->
+            <div class="address-card">
+                <div class="address-header">
+                    <span class="address-type-tag">Home</span>
+                    <div class="address-actions">
+                        <button class="icon-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="icon-btn delete"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Placeholder (Visible when fetching data) -->
+            <div class="loading-state">
+                <p>Fetching your saved addresses...</p>
+            </div>
+        </div>
+
+        <!-- Add New Address Action -->
+        <div class="bottom-action">
+            <button class="add-btn">
+                <i class="fa-solid fa-plus"></i> Add New Address
+            </button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

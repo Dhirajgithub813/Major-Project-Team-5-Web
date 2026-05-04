@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center | Coriz-O-Mart</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Your External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Header Section -->
+  <header class="header">
+    <div class="navbar-top" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background: white; border-bottom: 2px solid #7b2cbf;">
+        <!-- Back Arrow on the Left -->
+        <a href="profile.html" class="back-btn" style="color: #333; font-size: 20px;"><i class="fa-solid fa-arrow-left"></i></a>
+        
+        <!-- Title and Purple Bar on the Right -->
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 6px; height: 25px; background: #7b2cbf; border-radius: 2px;"></div>
+            <h2 style="margin: 0; font-size: 22px; color: #333; font-weight: 700;">Help Center</h2>
+        </div>
+    </div>
+</header>
+    <!-- Main Content -->
+    <main class="help-container">
+        
+        <h3 class="faq-title">Frequently Asked Questions</h3>
+
+        <div id="faq-wrapper">
+            <!-- FAQ Item 1 -->
+            <div class="faq-card" onclick="toggleFAQ(this)">
+                <div class="faq-header">
+                    <h4>How can I track my order?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Go to 'My Orders' section in your profile, select the order you want to track, and you will see the real-time status.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-card" onclick="toggleFAQ(this)">
+                <div class="faq-header">
+                    <h4>What is the return policy?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You can return any product within 7 days of delivery. Make sure the product is in its original condition.
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-card" onclick="toggleFAQ(this)">
+                <div class="faq-header">
+                    <h4>How do I cancel my order?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    You can cancel your order before it gets dispatched from 'My Orders' page.
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Support Section -->
+        <div class="contact-box">
+            <h3>Still need help?</h3>
+            <p>Our customer support is available 24/7</p>
+            <div class="contact-links">
+                <a href="tel:1234567890" class="contact-link">
+                    <i class="fa-solid fa-phone"></i> Call Us
+                </a>
+                <a href="mailto:support@corizomart.com" class="contact-link">
+                    <i class="fa-solid fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script for interactivity -->
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.querySelector('.faq-answer');
+            const icon = element.querySelector('.fa-chevron-down');
+            
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                icon.style.transform = "rotate(0deg)";
+                icon.style.color = "#ccc";
+            } else {
+                answer.style.display = "block";
+                icon.style.transform = "rotate(180deg)";
+                icon.style.color = "#7b2cbf";
+            }
+        }
+    </script>
+</body>
+</html>

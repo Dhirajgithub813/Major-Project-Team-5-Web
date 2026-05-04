@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payments | Coriz-O-Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="payments-page">
+
+    <header class="header">
+        <div class="navbar-top">
+            <a href="profile.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title-group">
+                <div class="purple-bar"></div>
+                <h2 class="section-title">Payment Methods</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- Wallet Section -->
+        <h3 class="section-label">Wallet Balance</h3>
+        <div class="wallet-card">
+            <div class="wallet-info">
+                <i class="fa-solid fa-wallet wallet-icon"></i>
+                <span class="wallet-name">Coriz-O Wallet</span>
+            </div>
+            <!-- BACKEND: Update balance dynamically -->
+            <span id="wallet-balance" class="balance-amount">₹0.00</span>
+        </div>
+
+        <!-- Saved Cards Section -->
+        <h3 class="section-label">Saved Cards</h3>
+        <div id="cards-container">
+            <!-- BACKEND: Loop through saved cards here -->
+            <div class="empty-cards-placeholder">
+                <p>No cards saved.</p>
+            </div>
+        </div>
+
+        <!-- Action Button -->
+        <button class="add-card-btn">
+            <i class="fa-solid fa-credit-card"></i> Add New Card
+        </button>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

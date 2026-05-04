@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Coriz-O-Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="account-page">
+
+    <header class="header">
+        <div class="navbar-top">
+            <a href="home.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+            <div class="title-group">
+                <div class="purple-bar"></div>
+                <h2 class="section-title">Account</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- User Profile Card -->
+        <section class="user-card">
+            <div class="user-info">
+                <div class="avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="user-text">
+                    <h3 id="user-display-name">Loading name...</h3> 
+                    <p id="user-display-phone">Fetching details...</p>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-right arrow-icon"></i>
+        </section>
+
+        <!-- Navigation Menu Grid -->
+        <div class="profile-menu-grid">
+            <a href="myorders.html" class="menu-item">
+                <i class="fa-solid fa-box-archive icon-orders"></i>
+                <span>My Orders</span>
+            </a>
+            <a href="wishlist.html" class="menu-item">
+                <i class="fa-solid fa-heart icon-wishlist"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="payments.html" class="menu-item">
+                <i class="fa-solid fa-wallet icon-payments"></i>
+                <span>Payments</span>
+            </a>
+            <a href="address.html" class="menu-item">
+                <i class="fa-solid fa-location-dot icon-address"></i>
+                <span>Addresses</span>
+            </a>
+        </div>
+
+        <!-- Settings List -->
+        <div class="settings-list">
+            <a href="notifications.html" class="settings-item">
+                <div class="settings-label">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                </div>
+                <i class="fa-solid fa-chevron-right small-arrow"></i>
+            </a>
+            
+            <div class="settings-item no-link">
+                <div class="settings-label">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Language</span>
+                </div>
+                <div class="lang-selector-box">
+                    <select id="language-selector">
+                        <option value="en" selected>English</option>
+                        <option value="ta">Tamil (தமிழ்)</option>
+                        <option value="hi">Hindi (हिंदी)</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down lang-arrow"></i>
+                </div>
+            </div>
+
+            <a href="help.html" class="settings-item">
+                <div class="settings-label">
+                    <i class="fa-solid fa-headset"></i>
+                    <span>Help Center</span>
+                </div>
+                <i class="fa-solid fa-chevron-right small-arrow"></i>
+            </a>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="logout-btn" onclick="handleLogout()">Logout</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

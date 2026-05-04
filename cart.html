@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart | Coriz-O-Mart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cart-body">
+
+    <header class="header">
+        <div class="navbar-top">
+            <a href="home.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i></a>
+            <!-- Wishlist style matching header -->
+            <div class="title-group">
+                <div class="purple-bar"></div>
+                <h2 class="section-title">Shopping Cart</h2>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-main-container">
+        
+        <!-- Cart Item Card -->
+        <div class="cart-item-card">
+            <div class="product-img-box">
+                <img src="images/placeholder.png" alt="Product">
+            </div>
+            
+            <div class="product-details">
+                <h4>Eyeshadow Palette</h4>
+                <p class="price">₹1599</p>
+            </div>
+
+            <!-- Quantity & Actions -->
+            <div class="action-group">
+                <div class="qty-controls">
+                    <button class="qty-btn">-</button>
+                    <span class="qty-val">1</span>
+                    <button class="qty-btn">+</button>
+                </div>
+                
+                <button class="delete-btn">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Total & Checkout Section -->
+        <div class="checkout-section">
+            <div class="total-row">
+                <span class="total-label">Total Amount:</span>
+                <span class="total-price">₹1599</span>
+            </div>
+            
+            <button class="checkout-btn">
+                Proceed to Checkout
+            </button>
+        </div>
+
+    </main>
+
+</body>
+</html>
